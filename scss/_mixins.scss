@@ -1,0 +1,127 @@
+// === Mixins [ Шаблоны классов стилей, используемых на всех страницах ]===
+
+html, body {
+    font-family: 'Century Gothic';
+    font-size: 16px;
+
+    @media ($media_xl) {
+        font-size: 14px;
+    }
+
+    @media ($media_lg) {
+        font-size: 11px;
+    }
+
+    @media ($media_md) {
+        font-size: 9px;
+    }
+
+    @media ($media_md) {
+        font-size: 14px;
+    }
+}
+
+.navbar_mobile_open {
+    overflow: hidden;
+    width: 21px;
+    height: 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1px;
+
+    input {
+        display: flex;
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    input:checked ~ span {
+        background-color: lightgrey;
+        width: 27px;
+        margin: 0;
+    }
+
+    input:checked ~ span[aria-label="line1"] {
+        transform: rotate(135deg) translate(1px, 1px);
+        transform-origin: bottom;
+    }
+
+    input:checked ~ span[aria-label="line2"] {
+        transform: rotate(45deg) translate(1px, -1px);
+        transform-origin: top;
+    }
+
+    input:checked ~ span[aria-label="line3"] {
+        transform: rotate(45deg);
+        opacity: 0;
+    }
+      
+    span {
+        width: 21px;
+        height: 4px;
+        margin-bottom: 4px;
+        background: grey;
+        border-radius: 4px;
+        transition: all .5s cubic-bezier(.08,.81,.87,.71);
+    }
+
+    span:last-child {
+        margin-bottom: 0;
+    }
+
+    span[aria-label="line1"] {
+        transform-origin: 4px 0px;
+    }
+
+    span[aria-label="line3"] {
+        transform-origin: bottom right;
+    }
+}
+
+.button-primary {
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    background: $color_primary_yellow;
+    padding: 1.12rem 2.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        color: $color_primary_yellow;
+        background-color: #fff;
+        box-shadow: inset 2px 2px $color_primary_yellow, inset -2px -2px $color_primary_yellow;
+    }
+}
+
+.section-header-font {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1.1;
+
+    @media ($media_sm) {
+        font-size: 2.2rem;
+    }
+}
+
+.overlay {
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+// === / Mixins ===

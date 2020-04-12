@@ -1,0 +1,158 @@
+// === Header [ Стили для навбара, используемые на всех страницах ] ===
+
+.section-header {
+    
+    .section-inner {
+        max-width: 95%;
+        height: 9.4rem;
+        padding-top: 1.25rem;
+        display: flex;
+
+        @media ($media_sm) {
+            height: auto;
+            flex-direction: column;
+            max-width: 100%;
+            width: 100%;
+            background-color: #3e4044;
+            position: relative;
+            z-index: 6;
+        }
+    }
+
+    &-top {
+        display: flex;
+
+        a {
+            display: block;
+
+            img {
+                max-height: 100%;
+
+                @media ($media_sm) {
+                    height: 70px;
+                }
+            }
+        }
+
+        &-button {
+            display: none;
+    
+            @media ($media_sm) {
+                display: block;
+            }
+        }
+
+        @media ($media_sm) {
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2.5% 1rem 2.5%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        }
+    }
+
+    &-container {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-left: 1.25rem;
+
+        @media ($media_sm) {
+            display: none;
+            border: none;
+            flex-direction: column;
+            margin-left: 0;
+            padding: 1.25rem 2.5%;
+            background-color: inherit;
+            position: absolute;
+            top: 106px;
+        }
+
+        &-nav {
+            margin: 0 auto;
+
+            ul {
+                display: flex;
+                height: 100%;
+
+                @media ($media_sm) {
+                    flex-direction: column;
+                    margin: 2.5rem 0;
+                }
+
+                li {
+                    &:not(:last-child) {
+                        margin-right: 5.5rem;
+
+                        @media ($media_md) {
+                            margin-right: 4rem;
+                        }
+
+                        @media ($media_sm) {
+                            margin: 0 0 1.5rem 0;
+                        }
+                    }
+
+                    a {
+                        font-size: 1.12rem;
+                        color: #fff;
+                        text-decoration: none;
+                        position: relative;
+
+                        &::after {
+                            position: absolute;
+                            content: '';
+                            display: block;
+                            width: 100%;
+                            background-color: #fff;
+                            height: 1px;
+                            transform: scale(0);
+                            transition: all 0.3s ease;
+                            bottom: -10px;
+                        }
+
+                        &:hover::after {
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+        }
+
+        &-numbers {
+
+            &-number {
+                display: flex;
+
+                p {
+                    font-size: 1.5rem;
+                    margin-left: 1rem;
+                    color: #fff;
+
+                    @media ($media_xl) {
+                        font-size: 1.25rem;
+                    }
+                }
+
+                img {
+                    width: 1.25rem;
+                }
+
+                &:first-child {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+        &-button {
+            margin-left: 3.75rem;
+
+            @media ($media_sm) {
+                margin: 2rem 0 0 0;
+            }
+        }
+    }
+
+}
+
+// === / Header ===
