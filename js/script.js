@@ -46,6 +46,10 @@ let sectionFooterIcons = $(".section-footer-top-content-icons");
 let sectionFooterSublogo = $(".section-footer-top-content-sublogo");
 let sectionFooterScroll = false;
 
+
+let previewText = $(".section-preview-card-content-container-text");
+let previewHeader = $(".section-preview-card-content-container h4");
+
 $(document).ready(function() {
 
     sectionPromoHeader.addClass("fadeInBottom animDelay-0_5");
@@ -59,6 +63,11 @@ $(document).ready(function() {
     setTimeout(function() {
         sectionPromoItems.css("transition", "0.3s ease-in-out");
     }, 2000);
+
+    // блок для карточки preview
+
+    previewText.css("transform", "translateY(-" + (previewText.height() / 2) + "px)");
+    previewHeader.css("transform", "translateY(" + (previewText.height() / 2) + "px)");
 
     $(navButton).click(function () {
         if (!navbar.is(':visible')) {

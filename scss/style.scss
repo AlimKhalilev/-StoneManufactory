@@ -425,21 +425,31 @@ $round-item-anim-delay: 2;
                 overflow: hidden;
 
                 h4 {
+                    transition: 0.3s ease-in-out;
                     font-weight: normal;
                     font-size: 2rem;
                     text-transform: uppercase;
+                    z-index: 1;
+
+                    @media ($media_sm) {
+                        font-size: 1.6rem;
+                    }
                 }
 
-                p {
-                    line-height: 2;
-                    max-width: 70%;
-                    margin: 1.75rem 0;
-                }
-
-                p, button {
-                    opacity: 0;
+                &-text {
                     transition: 0.3s ease-in-out;
-                    display: none;
+                    max-width: 70%;
+                    opacity: 0;
+
+                    p {
+                        line-height: 2;
+                        margin: 1.75rem 0;
+
+                        @media ($media_sm) {
+                            font-size: 0.8rem;
+                            margin: 1.4rem 0;
+                        }
+                    }
                 }
             }
 
@@ -486,14 +496,20 @@ $round-item-anim-delay: 2;
                 &::after {
                     bottom: 10%;
                 }
+
+                &-container {
+                    h4 {
+                        transform: translateY(0) !important;
+                    }
+
+                    &-text {
+                        opacity: 1;
+                        transform: translateY(0) !important;
+                    }
+                }
             }
 
 
-
-            p, button {
-                display: block;
-                opacity: 1;
-            }
         }
     }
 }
