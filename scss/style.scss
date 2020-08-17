@@ -11,7 +11,7 @@
 // === Promo ===
 
 .section-main {
-    background-image: url(/dist/img/main-background.webp);
+    background-image: url(../img/main-background.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -189,7 +189,7 @@ $round-item-anim-delay: 2;
 
 .section-materials {
     padding: 9rem 0;
-    background-image: url(/dist/img/materials-background.webp); // width 902px
+    background-image: url(../img/materials-background.webp); // width 902px
     background-position-x: calc((1440px / 2) - 902px);
     background-repeat: no-repeat;
     overflow: hidden;
@@ -654,7 +654,7 @@ $scheme-card-margin: 5rem;
             text-align: center;
             line-height: 0.7;
 
-            background-image: url(/dist/img/photos-background.png);
+            background-image: url(../img/photos-background.png);
             background-attachment: fixed;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -671,7 +671,7 @@ $scheme-card-margin: 5rem;
 // === Photos ===
 
 .section-photos {
-    background-image: url(/dist/img/photos-background.png);
+    background-image: url(../img/photos-background.png);
     background-size: cover;
     background-position: center;
 
