@@ -94,10 +94,11 @@ html, body {
     cursor: pointer;
     transition: 0.3s ease-in-out;
 
-    &:hover {
+    &:hover, &:focus {
         color: $color_primary_yellow;
         background-color: #fff;
         box-shadow: inset 2px 2px $color_primary_yellow, inset -2px -2px $color_primary_yellow;
+        outline: none;
     }
 }
 

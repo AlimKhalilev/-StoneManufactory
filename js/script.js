@@ -52,6 +52,39 @@ let previewHeader = $(".section-preview-card-content-container h4");
 
 $(document).ready(function() {
 
+    // блок для контактной формы
+
+    $("#form_number").mask("+7(999)999-99-99");
+    document.querySelector(".section-recall-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let infoBlock = document.querySelector(".section-recall-form-message");
+        let infoBlockName = document.querySelector("#form_name");
+        let infoBlockNumber = document.querySelector("#form_number");
+        let infoBlockMessage = document.querySelector("#form_message");
+
+        infoBlock.classList.add("show");
+
+        if (!infoBlockMessage.value || !infoBlockName.value || !infoBlockNumber.value) {
+            infoBlock.classList.add("error");
+            infoBlock.innerHTML = "Заполните все поля!";
+        }
+        else {
+            infoBlock.classList.add("success");
+            infoBlock.innerHTML = "Заявка успешно отправлена!";
+        }
+        
+        setTimeout(function() {
+            infoBlock.classList.remove("show");
+            infoBlock.classList.remove("success");
+            infoBlock.classList.remove("error");
+        }, 3000);
+
+        
+    });
+
+    // --------
+
     sectionPromoHeader.addClass("fadeInBottom animDelay-0_5");
     sectionPromoSubheader.addClass("fadeInTop animDelay-1_5");
     sectionPromoItems.addClass("fadeInRight");
